@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'sqlite3'
 gem 'record_tag_helper', '~> 1.0'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

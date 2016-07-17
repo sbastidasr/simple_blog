@@ -1,11 +1,22 @@
-<%= div_for comment do %>
-        <p>
-                <strong>
-                        Posted <%= time_ago_in_words(comment.created_at) %> ago
-                </strong>
-                <br/>
-              <p>User:  <%= comment.user %> </p>
-              <p>Comment:  <%= comment.body %> </p>
 
-        </p>
+
+
+<%= div_for comment do %>
+
+
+
+
+<!-- Comment -->
+<div class="media">
+
+  <div class="media-body">
+    <h4 class="media-heading"><%= comment.user %> </p>
+      <small>Posted <%= time_ago_in_words(comment.created_at) %> ago</small>
+    </h4>
+  <%= comment.body %>
+  </div>
+</div>
+<hr>
+
+
 <% end %>

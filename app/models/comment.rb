@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :post, :polymorphic => true
+  belongs_to :post
   validates_presence_of :post, :body, :user
 end

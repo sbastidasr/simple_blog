@@ -5,9 +5,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.includes(:comments).all
-  
-    @posts.first.comments.first(3)
-
   end
 
   # GET /posts/1

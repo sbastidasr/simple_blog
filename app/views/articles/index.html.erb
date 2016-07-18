@@ -19,7 +19,7 @@
     <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
 
     <!-- Articleed Comments -->
-    <div id="articleed-comments">
+    <div id="posted-comments">
       <%= render :partial => article.comments.first(3) %>
     </div>
 

@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
-  has_many :comments
-
+  has_many :comments, as: :commentable
   has_many :tags, :through => :taggings
   has_many :taggings, :as => :taggable
 

@@ -1,11 +1,15 @@
 class CommentsController < ApplicationController
   def create
-    @post = Post.find(params[:post_id])
-    p "asdas"
-    p @post
-    @comment = @post.comments.create!(comment_params)
+
+    if params[:article_id]
+      @commentable = Article.find(params[:article_id])
+    else
+      @commentable = Post.find(params[:post_id])
+    end
+
+    @comment = @commentable.comments.create!(comment_params)
     respond_to do |format|
-      format.html { redirect_to @post }
+      format.html { redirect_to @commentable }
       format.js
     end
   end

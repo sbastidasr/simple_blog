@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20160718021535) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "post_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.text     "body"
     t.string   "user"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -52,5 +52,4 @@ ActiveRecord::Schema.define(version: 20160718021535) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "posts"
 end

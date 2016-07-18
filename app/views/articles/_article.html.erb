@@ -1,0 +1,3 @@
+<h2><%= link_to_unless_current @article.title, @article %></h2>
+<%= simple_format @article.body %>
+ <td><div class="tags"><%= @article.all_tags %></div></td>

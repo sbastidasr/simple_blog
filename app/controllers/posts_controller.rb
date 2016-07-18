@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.includes(:comments).all
+    #This fixes N+1 Queries. Preloading comments to memory
   end
 
   # GET /posts/1

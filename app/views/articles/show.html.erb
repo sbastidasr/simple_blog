@@ -1,0 +1,66 @@
+<!-- <%= render :partial => @article %> -->
+<div class="row">
+  <!-- Blog Article Content Column -->
+  <div class="col-lg-8">
+    <!-- Blog Article -->
+    <!-- Title -->
+    <h1><%= link_to_unless_current @article.title, @article %></h1>
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Back', articles_path %>
+
+    <hr>
+
+    <!-- Date/Time -->
+    <p><span class="glyphicon glyphicon-time"></span> Articleed: <%= distance_of_time_in_words_to_now(@article.created_at) %> ago</p>
+
+    <hr>
+
+
+    <!-- Article Content -->
+    <p class="lead"><%= simple_format @article.body %>
+      <hr>
+
+      <!-- Blog Comments -->
+
+      <!-- Comments Form -->
+      <div class="well">
+        <%= form_for [@article, Comment.new], :remote => true do |f| %>
+
+        <h4>Leave a Comment:</h4>
+        <form role="form">
+          <div class="form-group">
+            <%= f.label :user, "User" %><br/>
+            <%= f.text_field :user %><br/>
+            <%= f.label :body, "Comment" %><br/>
+            <%= f.text_area :body, :rows => 3, :class => "form-control"  %>
+          </div>
+          <p><%= f.submit "Add comment" ,:class => "btn btn-primary"%></p>
+
+        </form>
+
+        <% end %>
+      </div>
+
+
+      <hr>
+      <!-- Articleed Comments -->
+      <div id="articleed-comments">
+        <%= render :partial => @article.comments %>
+      </div>
+
+    </div>
+
+    <!-- Blog Sidebar Widgets Column -->
+    <div class="col-md-4">
+
+      <!-- Side Widget Well -->
+      <div class="well">
+        <h4>Article Tags</h4>
+        <p><%= @article.all_tags %></p>
+
+        </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->

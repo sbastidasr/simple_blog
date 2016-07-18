@@ -28,6 +28,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     respond_to do |format|
+      puts "bah"
+      p @post
+p @post.tags
+p @post.save
+p @post.errors
+p @post.errors.full_messages
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }

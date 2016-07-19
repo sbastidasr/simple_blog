@@ -52,8 +52,6 @@ group :production do
 
   group :test do
     gem "capybara", :git => "https://github.com/jnicklas/capybara"
-
-
   end
 
 end

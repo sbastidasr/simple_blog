@@ -27,7 +27,7 @@
         <%= form_for [@post, Comment.new], :remote => true do |f| %>
 
         <h4>Leave a Comment:</h4>
-        <form role="form">
+
           <div class="form-group">
             <%= f.label :user, "User" %><br/>
             <%= f.text_field :user %><br/>
@@ -36,7 +36,7 @@
           </div>
           <p><%= f.submit "Add comment" ,:class => "btn btn-primary"%></p>
 
-        </form>
+    
 
         <% end %>
       </div>

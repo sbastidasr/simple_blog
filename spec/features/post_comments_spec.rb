@@ -11,9 +11,11 @@ feature 'Comments' do
 
     comment = 'Wow, that was some awesome content indeed!'
     username = 'awesomeuser'
-    fill_in 'comment_body', :with => comment
-    fill_in 'comment_user', :with => username
+    fill_in 'User', :with => comment
+    fill_in 'Comment', :with => username
     click_button 'Add comment'
+
+
     expect(page).to have_content comment
     expect(page).to have_content username
   end

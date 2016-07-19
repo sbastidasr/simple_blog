@@ -8,18 +8,17 @@ feature 'CRUD for posts' do
 
     expect(page).to have_content 'New Post'
 
-
     fill_in 'Title', :with => 'Test Post 1'
     fill_in 'Body', :with => 'Some awesome content'
     fill_in 'post_all_tags', :with => 'tag1, tag2'
-
-
     click_button 'Create Post'
 
     expect(page).to have_content 'Test Post 1'
+
   end
 
   context 'Having a certain post:' do
+    
     background do
       @post = Post.create(:title => 'Awesome Blog Post', :body => 'Some awesome content')
     end

@@ -1,31 +1,42 @@
-<%= form_for(post) do |f| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<!-- <%= render :partial => @post %> -->
+<div class="row">
+  <!-- Blog Post Content Column -->
+  <div class="col-lg-8">
+    <div class="well">
+      <%= form_for(post) do |f| %>
+      <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <ul>
+          <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+      <form>
+        <div class="form-group">
+          <%= f.label :title %>
+          <br/>
+          <%= f.text_field :title, :class => "full-size" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
+        <div class="form-group">
+          <%= f.label :body %><br/>
+          <%= f.text_area :body, :rows => 5, :class => "full-size" %>
+        </div>
 
-  <div class="field">
-    <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
-  </div>
+        <div class="form-group">
+          <%= f.text_field :all_tags, placeholder: "Tags separated with comma", :class => "full-size" %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit %>
+        <div class="form-group">
+          <%= f.submit  :class => "btn btn-default" %>
+        </div>
+        <% end %>
+      </div>
+    </form>
   </div>
-<% end %>
+</div>

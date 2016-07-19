@@ -11,7 +11,7 @@
     <hr>
 
     <!-- Date/Time -->
-    <p><span class="glyphicon glyphicon-time"></span> Articleed: <%= distance_of_time_in_words_to_now(@article.created_at) %> ago</p>
+    <p><span class="glyphicon glyphicon-time"></span> Posted: <%= distance_of_time_in_words_to_now(@article.created_at) %> ago</p>
 
     <hr>
 
@@ -44,7 +44,7 @@
 
       <hr>
       <!-- Articleed Comments -->
-      <div id="articleed-comments">
+      <div id="posted-comments">
         <%= render :partial => @article.comments %>
       </div>
 

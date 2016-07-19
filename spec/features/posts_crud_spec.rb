@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'CRUD for posts' do
 
-  scenario 'Creating a new Post' do
+  scenario 'Creating a new Post + Tags' do
     visit root_path
     click_link 'New Post'
 
@@ -11,6 +11,7 @@ feature 'CRUD for posts' do
 
     fill_in 'Title', :with => 'Test Post 1'
     fill_in 'Body', :with => 'Some awesome content'
+    fill_in 'post_all_tags', :with => 'tag1, tag2'
 
 
     click_button 'Create Post'

@@ -11,9 +11,10 @@ feature 'CRUD for posts' do
 
     fill_in 'Title', :with => 'Test Post 1'
     fill_in 'Body', :with => 'Some awesome content'
-    fill_in 'Tags', :with => 'tag2, tag3'
+
 
     click_button 'Create Post'
+    
     page.should have_content 'Test Post 1'
   end
 

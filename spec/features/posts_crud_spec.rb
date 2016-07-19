@@ -6,7 +6,7 @@ feature 'CRUD for posts' do
     visit root_path
     click_link 'New Post'
 
-    page.should have_content 'New Post'
+    expect(page).to have_content 'New Post'
 
 
     fill_in 'Title', :with => 'Test Post 1'
@@ -14,8 +14,8 @@ feature 'CRUD for posts' do
 
 
     click_button 'Create Post'
-    
-    page.should have_content 'Test Post 1'
+
+    expect(page).to have_content 'Test Post 1'
   end
 
   context 'Having a certain post:' do

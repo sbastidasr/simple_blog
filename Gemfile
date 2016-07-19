@@ -35,7 +35,8 @@ gem 'sass-rails', '>= 3.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem "rspec-rails"
+ gem 'rspec-rails', '~> 3.4'
+ gem 'rspec-collection_matchers'
 end
 
 group :development do
@@ -50,7 +51,9 @@ end
 group :production do
 
   group :test do
-    gem 'capybara'
+    gem "capybara", :git => "https://github.com/jnicklas/capybara"
+
+
   end
 
 end
